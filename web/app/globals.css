@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background: #05060a;
+  color: #e8eaf2;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(74, 244, 176, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 244, 176, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main, header, footer { position: relative; z-index: 1; }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+
+button {
+  font-family: 'Syne', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+a { color: #4af4b0; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Print-friendly score reports */
+@media print {
+  body::before { display: none; }
+  body { background: white; color: black; }
+  .no-print { display: none !important; }
+}
